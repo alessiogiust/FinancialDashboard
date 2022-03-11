@@ -9,7 +9,6 @@ import plotly.express as px
 import plotly.io as pio
 
 # Functions
-@st.cache(allow_output_mutation=True)
 def get_data_today(tickers):
     """Solve yahoo error with different dates"""
     data = pd.DataFrame()
@@ -23,7 +22,6 @@ def get_data_today(tickers):
     data = data.fillna(method='ffill')
     return data
 
-@st.cache(allow_output_mutation=True)
 def price_ret_summary(tickers):
     data = get_data_today(tickers)
     p = pd.DataFrame()
